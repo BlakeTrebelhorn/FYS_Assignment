@@ -2,7 +2,35 @@
 
 ## Using the Program
 ----
-The program is pretty simple to use. Just select the files using the buttons in the application. It can read `csv`, `xls`, or `xlsx` files. The **randomize** button shuffles the order of the classes in the **Courses** file in an attempt to unskew the lower numbered classes filling up quicker. If the same files want to be processed multiple times, a new save file must be chosen each time it is run. This will be usefull if the randomize functions is used multiple times.
+#### Running the Program
+This will vary a bit depending on the platform you're using. To simplify the process, the only file that will need to be clicked on will be called `runMe.something`. The **something** won't matter, all of the different versions will do the same thing.
+#### Loading Files into the App
+The program accepts any of the following: `csv`, `xls`, or `xlsx`.
+To load them in, click on the **Browse** button in the application. It will be easier if all of the files are in the same location, as well as in the same folder as the application.
+##### Loading in the Students' selections
+The first file that will need to be loaded in is what the students' selections are. This should look like the following:
+
+| FirstName | LastName   | DRAKE ID  | FYSSelectedCourses | CRNSelectedCourses |
+| --------- | ---------- | --------- | ------------------ | ------------------ |
+| Joe       | Schmo      | 000000123 | FYS 1, FYS 6, FYS 37, FYS 42, FYS 48 | CRN 2931, CRN 6456, CRN 6976, CRN 6979, CRN 6983 |
+
+Just click the **Browse** button, find the `csv`, `xls`, or `xlsx` file with the selections, and hit open. The **Student File** text should change to the path where the file was located.
+
+##### Loading in the Courses file
+The process is the same as the above, just click the **Browse** button and select the file. The course file should be formatted like so:
+
+| FYS   | CRN      | Slots Available |
+| ----- | -------- | --------------- |
+| FYS 1 | CRN 2931 | 5 |
+
+#### Creating Output
+This is the easiest part (besides clicking the **Assign** button). Just click the button and name the file whatever you'd like to name it. The only thing that needs to happen is that it needs to be a `csv` file. So if one was going to name the file `FYS Session 1 20XX`, what would need to be typed in is `FYS Session 1 20XX.csv`. 
+
+#### The Randomize Button
+One problem identified the first year this was tested was that the lower numbered FYSs were getting filled quicker. In an attempt to unskew this, the randomize button was added. This simply shuffles the order of the courses that are fed in via the file above. If the **Randomize** button is unchecked, the courses will **not** be shuffled.
+
+#### Multiple Runs
+If you want to run the data through multiple times, either with the randomize button off and then on or on the whole time, the save file will need to be changed in order to see the new results. So each time the program is run, one will have to click browse and create a new save file before running it again.
 
 ## Installing on a Mac
 ----
