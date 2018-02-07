@@ -1,6 +1,6 @@
-CC = g++        # compile using g++
-CFLAGS = -O3    # optimize a lot
-TARGET = assign # the binary to build
+CC = g++        	# compile using g++
+CFLAGS = -O3 -std=c++11	# optimize a lot, use C++11 standards
+TARGET = assign.exe 	# the binary to build
 OUT = -o
 
 ifeq ($(OS),Windows_NT)
