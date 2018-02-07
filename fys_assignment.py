@@ -175,11 +175,16 @@ class App(Frame):
         courses_file_path2 = self.course_file + '-gen2'
         df2.to_csv(courses_file_path2, index=False)
                 
-        # Call the assignment program with the proper paths, based on ranomization checkbox
-        if self.var.get():
-        	ret = call(['./assign', student_file_path, courses_file_path2, self.save_file])
+        # set arg for windows or *nix systems
+        if os.name == 'nt':
+            arg = 'assign.exe'
         else:
-        	ret = call(['./assign', student_file_path, courses_file_path, self.save_file])
+            arg = './assign.exe'
+        # Call the assignment program with the proper paths, based on ranomization checkbox    
+        if self.var.get():
+        	ret = call([arg, student_file_path, courses_file_path2, self.save_file])
+        else:
+        	ret = call([arg, student_file_path, courses_file_path, self.save_file])
 
         # get rid of the generated files
         remove(student_file_path)
