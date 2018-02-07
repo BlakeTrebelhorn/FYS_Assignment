@@ -4,15 +4,18 @@ import os.path 				# for checking the file extension
 import pandas
 import numpy as np
 
-# for python3
-from tkinter import Tk, Label, Button, BOTH, Frame, BooleanVar, Checkbutton
-from tkinter import filedialog
-from tkinter import messagebox
+try:
+	# python3
+	from tkinter import Tk, Label, Button, BOTH, Frame, BooleanVar, Checkbutton
+	from tkinter import filedialog
+	from tkinter import messagebox
+except ImportError:
+	# python2
+	from Tkinter import Tk, Label, Button, BOTH, Frame, BooleanVar, Checkbutton
+	import tkMessageBox as messagebox
+	import tkFileDialog as filedialog
 
-# for python2
-# from Tkinter import Tk, Label, Button, BOTH, Frame, BooleanVar, Checkbutton
-# import tkMessageBox as messagebox
-# import tkFileDialog as filedialog
+
 
 class App(Frame):
     def __init__(self, parent):
