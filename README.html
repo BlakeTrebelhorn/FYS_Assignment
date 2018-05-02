@@ -726,15 +726,72 @@ pre {
 <h2>
 <a id="user-content-using-the-program" class="anchor" href="#using-the-program" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using the Program</h2>
 <hr>
-<p>The program is pretty simple to use. Just select the files using the buttons in the application. It can read <code>csv</code>, <code>xls</code>, or <code>xlsx</code> files. The <strong>randomize</strong> button shuffles the order of the classes in the <strong>Courses</strong> file in an attempt to unskew the lower numbered classes filling up quicker. If the same files want to be processed multiple times, a new save file must be chosen each time it is run. This will be usefull if the randomize functions is used multiple times.</p>
+<h4>
+<a id="user-content-running-the-program" class="anchor" href="#running-the-program" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running the Program</h4>
+<p>This will vary a bit depending on the platform you're using. To simplify the process, the only file that will need to be clicked on will be called <code>runMe.something</code>. The <strong>something</strong> won't matter, all of the different versions will do the same thing.</p>
+<h4>
+<a id="user-content-loading-files-into-the-app" class="anchor" href="#loading-files-into-the-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loading Files into the App</h4>
+<p>The program accepts any of the following: <code>csv</code>, <code>xls</code>, or <code>xlsx</code>.
+To load them in, click on the <strong>Browse</strong> button in the application. It will be easier if all of the files are in the same location, as well as in the same folder as the application.</p>
+<h5>
+<a id="user-content-loading-in-the-students-selections" class="anchor" href="#loading-in-the-students-selections" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loading in the Students' selections</h5>
+<p>The first file that will need to be loaded in is what the students' selections are. This should look like the following:</p>
+<table>
+<thead>
+<tr>
+<th>FirstName</th>
+<th>LastName</th>
+<th>DRAKE ID</th>
+<th>FYSSelectedCourses</th>
+<th>CRNSelectedCourses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joe</td>
+<td>Schmo</td>
+<td>000000123</td>
+<td>FYS 1, FYS 6, FYS 37, FYS 42, FYS 48</td>
+<td>CRN 2931, CRN 6456, CRN 6976, CRN 6979, CRN 6983</td>
+</tr>
+</tbody>
+</table>
+<p>Just click the <strong>Browse</strong> button, find the <code>csv</code>, <code>xls</code>, or <code>xlsx</code> file with the selections, and hit open. The <strong>Student File</strong> text should change to the path where the file was located.</p>
+<h5>
+<a id="user-content-loading-in-the-courses-file" class="anchor" href="#loading-in-the-courses-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loading in the Courses file</h5>
+<p>The process is the same as the above, just click the <strong>Browse</strong> button and select the file. The course file should be formatted like so:</p>
+<table>
+<thead>
+<tr>
+<th>FYS</th>
+<th>CRN</th>
+<th>Slots Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FYS 1</td>
+<td>CRN 2931</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h4>
+<a id="user-content-creating-output" class="anchor" href="#creating-output" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating Output</h4>
+<p>This is the easiest part (besides clicking the <strong>Assign</strong> button). Just click the button and name the file whatever you'd like to name it. The only thing that needs to happen is that it needs to be a <code>csv</code> file. So if one was going to name the file <code>FYS Session 1 20XX</code>, what would need to be typed in is <code>FYS Session 1 20XX.csv</code>.</p>
+<h4>
+<a id="user-content-the-randomize-button" class="anchor" href="#the-randomize-button" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Randomize Button</h4>
+<p>One problem identified the first year this was tested was that the lower numbered FYSs were getting filled quicker. In an attempt to unskew this, the randomize button was added. This simply shuffles the order of the courses that are fed in via the file above. If the <strong>Randomize</strong> button is unchecked, the courses will <strong>not</strong> be shuffled.</p>
+<h4>
+<a id="user-content-multiple-runs" class="anchor" href="#multiple-runs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Multiple Runs</h4>
+<p>If you want to run the data through multiple times, either with the randomize button off and then on or on the whole time, the save file will need to be changed in order to see the new results. So each time the program is run, one will have to click browse and create a new save file before running it again.</p>
 <h2>
 <a id="user-content-installing-on-a-mac" class="anchor" href="#installing-on-a-mac" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing on a Mac</h2>
 <hr>
-<p>Macs come installed with Python 2.7.X, so the fys-assignment.py will need to have the <code>import</code> statements for Python 3 commented out, and the <code>import</code> statements for Python 2 uncommented.
-To check the version of Python installed (in case they have Python 3 for some reason), run <code>python -V</code> from the <strong>Terminal</strong>.</p>
-<p>NOTE: If using Python3, pip is called pip3, and Tkinter is called tkinter. You'll also have to change the <code>.command</code> file to call <code>python3</code> instead of just <code>python</code>.</p>
+<p>NOTE: If using Python3, pip is called pip3, and Tkinter is called tkinter. You might also have to change the <code>.command</code> file to call <code>python3</code> instead of just <code>python</code>.</p>
 <p>Install <code>pip</code>. You can download the <code>get-pip.py</code> from this site <a href="https://packaging.python.org/tutorials/installing-packages/" rel="nofollow">here</a>. Then <code>cd</code> to the location of the <code>get-pip.py</code> and run <code>python get-pip.py</code>. If any errors occur, run <code>sudo python get-pip.py</code>. The user of the machine will need to enter their password, which won't show up in the <strong>Terminal</strong> while being typed.</p>
 <p>Once pip is installed, install pandas. Just run <code>pip install pandas</code> from the <strong>Terminal</strong>. If there are errors, try <code>sudo -H pip install pandas</code>. If it complains about numpy, run <code>sudo -H pip install pandas --ignore-installed</code>.</p>
+<p>The <code>xlrd</code> package will also need to be installed to read in Excel files. Run <code>pip install xlrd</code> to have it installed.</p>
 <p>Check to see if they have Tkinter installed. Run <code>python</code> from the <strong>Terminal</strong>, then type <code>import Tkinter</code>. If no errors are displayed, then Tkinter is installed. I found that Tkinter was installed for me on macOS 10.12, but it wasn't on 10.10. There are <code>.pkg</code> files from the Python/ActiveTCL website for install Tkinter.</p>
 <p>Make a file called <code>runMe.command</code> file in the same folder as <code>fys-assignment.py</code> and <code>assign</code>, which should look like this:</p>
 <pre><code>cd -- "$(dirname "$BASH_SOURCE")"
@@ -744,8 +801,7 @@ python fys_assignment.py
 <a id="user-content-installing-on-a-windows-machine" class="anchor" href="#installing-on-a-windows-machine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing on a Windows Machine</h2>
 <hr>
 <p>Get Python 3 installed from <a href="https://www.python.org/downloads/" rel="nofollow">the Python website</a>. When running the installer, be sure to install Tkinter and pip through the advanced options/customize install.</p>
-<p>Once installed, open up the command line and run <code>pip install pandas</code>.</p>
-<p>The fys-assignment.py will need to have the python 2 <code>import</code> statements commented out and the python 3 <code>import</code> statements uncommented.</p>
+<p>Once installed, open up the command line and run <code>pip install pandas</code> and <code>pip install xlrd</code>.</p>
 <p>Make a file called <code>runMe.cmd</code> file (equivalent of <code>.command</code> file on Mac) in the same folder as <code>fys-assignment.py</code> and <code>assign.exe</code>, which should look like this:</p>
 <pre><code>cd %~dp0
 python fys_assignment.py

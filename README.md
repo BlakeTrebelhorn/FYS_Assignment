@@ -34,14 +34,13 @@ If you want to run the data through multiple times, either with the randomize bu
 
 ## Installing on a Mac
 ----
-Macs come installed with Python 2.7.X, so the fys-assignment.py will need to have the `import` statements for Python 3 commented out, and the `import` statements for Python 2 uncommented.
-To check the version of Python installed (in case they have Python 3 for some reason), run `python -V` from the **Terminal**.
-
-NOTE: If using Python3, pip is called pip3, and Tkinter is called tkinter. You'll also have to change the `.command` file to call `python3` instead of just `python`.
+NOTE: If using Python3, pip is called pip3, and Tkinter is called tkinter. You might also have to change the `.command` file to call `python3` instead of just `python`.
 
 Install `pip`. You can download the `get-pip.py` from this site [here](https://packaging.python.org/tutorials/installing-packages/). Then `cd` to the location of the `get-pip.py` and run `python get-pip.py`. If any errors occur, run `sudo python get-pip.py`. The user of the machine will need to enter their password, which won't show up in the **Terminal** while being typed.
 
 Once pip is installed, install pandas. Just run `pip install pandas` from the **Terminal**. If there are errors, try `sudo -H pip install pandas`. If it complains about numpy, run `sudo -H pip install pandas --ignore-installed`.
+
+The `xlrd` package will also need to be installed to read in Excel files. Run `pip install xlrd` to have it installed.
 
 Check to see if they have Tkinter installed. Run `python` from the **Terminal**, then type `import Tkinter`. If no errors are displayed, then Tkinter is installed. I found that Tkinter was installed for me on macOS 10.12, but it wasn't on 10.10. There are `.pkg` files from the Python/ActiveTCL website for install Tkinter.
 
@@ -56,9 +55,7 @@ python fys_assignment.py
 ----
 Get Python 3 installed from [the Python website](https://www.python.org/downloads/). When running the installer, be sure to install Tkinter and pip through the advanced options/customize install.
 
-Once installed, open up the command line and run `pip install pandas`.
-
-The fys-assignment.py will need to have the python 2 `import` statements commented out and the python 3 `import` statements uncommented.
+Once installed, open up the command line and run `pip install pandas` and `pip install xlrd`.
 
 Make a file called `runMe.cmd` file (equivalent of `.command` file on Mac) in the same folder as `fys-assignment.py` and `assign.exe`, which should look like this:
 ```
